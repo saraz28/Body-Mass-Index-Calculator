@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![full screenshot of app](./assets/images/projectScreenshot.jpg)
+![full screenshot of app](./assets/images/projectScreenshot.png)
 
 **Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
@@ -36,12 +36,11 @@ Users should be able to:
 
 1. Set up by creating a project folder.
 1. Look through the designs and begin structuring the HTML using Bootstrap.
-3. Add styles of the project.
-4. Add the javascript logic.
-5. Test the project locally and responsive design.
-6. Create a repository and publish the project through GitHub.
-7. Hosting the application with Netlify.
-
+1. Add styles of the project.
+1. Add the javascript logic.
+1. Test the project locally and responsive design.
+1. Create a repository and publish the project through GitHub.
+1. Hosting the application with Netlify.
 
 ### Built with
 
