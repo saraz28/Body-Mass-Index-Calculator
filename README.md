@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Body Mass Index Calculator App](https://bodymassindexcalculatorapp.netlify.app/)
+- Live Site URL: [Body Mass Index Calculator](https://bodymassindexcalculatorapp.netlify.app/)
 
 ## My process
 
