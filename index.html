@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous">
+
+        <title>Body Mass Index Calculator</title>
+
+    </head>
+    <body>
+
+        <div class="clearfix">
+            <div class="top-content">
+                <div class="row justify-content-around main-content">
+                    <div class="col-10 col-md-12 col-lg-10 mt-5 logo">
+
+                        <img src="assets/game-icons_abstract-082.svg" alt="icon"
+                            width="64px" height="64px">
+                    </div>
+                    <div class="col-sm-6 col-md-10 col-lg-4 mt-5">
+
+                        <span class="title">Body Mass
+                            Index Calculator</span>
+                        <p>Although BMI is often a practical indicator
+                            of healthy weight, it is not suited for
+                            every person. Specific groups should
+                            carefully consider their BMI outcomes, and
+                            in certain cases, the measurement may not be
+                            beneficial to use.</p>
+                    </div>
+                    <div class="col-12 col-md-10 col-lg-4 mt-5">
+
+                        <div class="card mb-5">
+                            <div class="card-body">
+                                <h5 class="card-title p-2">Enter your
+                                    details
+                                    below</h5>
+                                <form class="row g-3 p-2 text-start">
+                                    <div class="col-6 col-md-6 p-2">
+
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="flexRadioDefault"
+                                            id="flexRadioMetric"
+                                            onclick="eventHandler()"
+                                            checked>
+                                        <label
+                                            for="flexRadioMetric">
+                                            <span class="p-2">
+                                                Metric
+                                            </span>
+                                        </label>
+
+                                    </div>
+
+                                    <div class="col-6 col-md-6 p-2">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="flexRadioDefault"
+                                            onclick="eventHandler()"
+                                            id="flexRadioImperial">
+                                        <label
+                                            class="form-check-label"
+                                            for="flexRadioImperial">
+                                            <span class="p-2">
+                                                Imperial
+                                            </span>
+                                        </label>
+
+                                    </div>
+                                    <div id="metricChecked" class="p-0">
+                                        <div class="row justify-content-center">
+                                            <div
+                                                class="col-12 col-sm-8  col-md-6 ">
+                                                <label for="inputHeight"
+                                                    class="form-label">Height</label>
+                                                <div
+                                                    class="input-group mb-3">
+                                                    <input type="number"
+                                                        id="heightInput"
+                                                        class="form-control"
+                                                        placeholder="0"
+                                                        aria-describedby="basic-addon2">
+                                                    <span
+                                                        class="input-group-text"
+                                                        id="basic-addon2">cm</span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-12 col-sm-8  col-md-6">
+                                                <label for="inputWeight"
+                                                    class="form-label">Weight</label>
+                                                <div
+                                                    class="input-group mb-3">
+                                                    <input type="number"
+                                                        id="weightInput"
+                                                        placeholder="0"
+                                                        class="form-control"
+                                                        aria-describedby="basic-addon2">
+                                                    <span
+                                                        class="input-group-text"
+                                                        id="basic-addon2">kg</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="imperialChecked" class="p-0">
+                                        <div class="row">
+                                            <label for="inputHeight"
+                                                class="form-label">Height</label>
+                                            <div class="col col-md-6">
+                                                <div
+                                                    class="input-group mb-3">
+                                                    <input type="number"
+                                                        class="form-control"
+                                                        id="heightFeetInput"
+                                                        placeholder="0"
+                                                        aria-describedby="basic-addon2">
+                                                    <span
+                                                        class="input-group-text"
+                                                        id="basic-addon2">ft</span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col col-md-6">
+                                                <div
+                                                    class="input-group mb-3">
+                                                    <input
+                                                        type="number"
+                                                        class="form-control"
+                                                        placeholder="0"
+                                                        id="heightInchesInput"
+                                                        aria-describedby="basic-addon2">
+                                                    <span
+                                                        class="input-group-text"
+                                                        id="basic-addon2">in</span>
+                                                </div>
+                                            </div>
+                                            <label for="inputWeight"
+                                                class="form-label">Weight</label>
+                                            <div class="col col-md-6">
+
+                                                <div
+                                                    class="input-group mb-3">
+                                                    <input type="number"
+                                                        class="form-control"
+                                                        id="weightStonesInput"
+                                                        placeholder="0"
+                                                        aria-describedby="basic-addon2">
+                                                    <span
+                                                        class="input-group-text"
+                                                        id="basic-addon2">st</span>
+                                                </div>
+                                            </div>
+                                            <div class="col col-md-6">
+
+                                                <div
+                                                    class="input-group mb-3">
+                                                    <input type="number"
+                                                        class="form-control"
+                                                        id="weightPoundsInput"
+                                                        placeholder="0"
+                                                        aria-describedby="basic-addon2">
+                                                    <span
+                                                        class="input-group-text"
+                                                        id="basic-addon2">lbs</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="result m-2">
+                                        <div class="col-md-12">
+                                            <div id="message"
+                                                class="text-white p-2">
+                                                <span id="welcomeWord"
+                                                    class="p-2">
+                                                    Welcome !
+                                                </span>
+                                                <div
+                                                    class="p-2 col-12 col-md-12 col-lg-12 message-details">
+                                                    Enter your height
+                                                    and weight and
+                                                    you’ll see your BMI
+                                                    result here
+
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="row  p-2 justify-content-evenly align-items-center"
+                                                id="message-result">
+
+                                                <div
+                                                    class="col-8 col-md-4 col-lg-6">
+                                                    <div
+                                                        class="d-flex flex-column">
+                                                        <div
+                                                            class="text-white">Your
+                                                            BMI
+                                                            is...</div>
+                                                        <div
+                                                            class="bmi-number-result text-white"
+                                                            id="bmi-value">
+                                                            23.4</div>
+                                                    </div>
+
+                                                </div>
+                                                <div
+                                                    class="col-8 col-md-6 col-lg-6 text-white message-details"
+                                                    id="message-suggest">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="p-3">
+
+            <div
+                class="row justify-content-evenly align-items-center second-content">
+
+                <div
+                    class="col-9 col-lg-9 offset-md-10 mt-4 text-end arc">
+                    <img src="assets/Vector 24.svg" alt="arc shape">
+
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img width="100%"
+                        src="assets/photo.svg" src="A man eating sushi">
+                </div>
+                <div
+                    class="col-12 col-md-6 col-lg-4 justify-content-start second-content-section">
+                    <div>
+
+                        <span class="title">What your BMI result
+                            means</span>
+                        <p>A BMI range of 18.5 to 24.9 is considered
+                            a
+                            'healthy weight.' Maintaining a healthy
+                            weight
+                            may lower your chances of experiencing
+                            health
+                            issues later on, such as obesity and
+                            type 2
+                            diabetes. Aim for a nutritious diet with
+                            reduced
+                            fat and sugar content, incorporating
+                            ample
+                            fruits and vegetables. Additionally,
+                            strive
+                            for
+                            regular physical activity, ideally about
+                            30
+                            minutes daily for five days a week.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="p-3">
+
+            <div class="third-section">
+                <div class="row justify-content-around p-4 mt-5">
+
+                    <div class="col-12 col-md-12 col-lg-3">
+                        <div class="d-flex  mb-3 items">
+                            <div class="p-2"><img
+                                    src="assets/Group 40.svg"
+                                    alt="food icon"></div>
+                            <div class="p-2">
+                                <span>
+                                    Healthy eating
+                                </span>
+                                <p class="pt-2">
+                                    Healthy eating promotes weight control,
+                                    disease prevention, better digestion,
+                                    immunity, mental clarity, and mood.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-3">
+                        <div class="d-flex  mb-3 items">
+                            <div class="p-2"><img
+                                    src="assets/Group 41.svg"
+                                    alt="exercise icon"></div>
+                            <div class="p-2">
+                                <span>
+                                    Regular exercise
+                                </span>
+
+                                <p class="pt-2">Exercise improves
+                                    fitness, aids
+                                    weight control, elevates mood, and
+                                    reduces disease risk, fostering
+                                    wellness and longevity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-3">
+                        <div
+                            class="d-flex  mb-3 items">
+                            <div class="p-2"><img
+                                    src="assets/Group 42.svg"
+                                    alt="sleep icon"></div>
+                            <div class="p-2">
+                                <span>
+                                    Adequate sleep
+                                </span>
+
+                                <p class="pt-2">Sleep enhances mental
+                                    clarity,
+                                    emotional stability, and physical
+                                    wellness, promoting overall
+                                    restoration and rejuvenation.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="pb-5">
+            <!-- large view -->
+            <div id="LargeView" class="row justify-content-md-around">
+                <div class="col-12 col-sm-12  col-lg-6">
+                    <span class="title">Limitations of BMI</span>
+                    <p>Better understand your weight in relation to
+                        your
+                        height
+                        using our body mass index (BM) calculator.
+                        While
+                        BMI
+                        is
+                        not the sole determinant of a healthy
+                        weight, it
+                        offers
+                        a valuable starting point to evaluate your
+                        overall
+                        health and well-being.</p>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <div class="d-flex">
+                                    <img
+                                        src="assets/ph_gender-intersex-light.svg"
+                                        alt="gender icon">
+                                    <span class="p-2">Gender</span>
+                                </div>
+                            </h5>
+                            <p class="card-text">
+                                The development and body fat
+                                composition of girls and boys vary
+                                with age. Consequently, a child's
+                                age and gender are considered when
+                                evaluating their BMI.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 offset-sm-2 col-sm-3 col-lg-4 buttom-arc"><img
+                        src="assets/Vector 25.svg" class="arc shape">
+                </div>
+                <div class="col-12 col-sm-10 col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6 pt-5"> <div
+                                class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <div class="d-flex">
+                                            <img
+                                                src="assets/ph_cake-light.svg"
+                                                alt="age icon">
+                                            <span
+                                                class="p-2">Age</span>
+                                        </div>
+                                    </h5>
+                                    <p class="card-text">
+                                        In aging individuals,
+                                        increased body fat and
+                                        muscle loss may cause BMI to
+                                        underestimate body fat
+                                        content.
+                                    </p>
+
+                                </div>
+                            </div></div>
+                        <div class="col-md-6 pt-5"> <div
+                                class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <div class="d-flex">
+                                            <img
+                                                src="assets/fluent-emoji-high-contrast_flexed-biceps.svg"
+                                                alt="muscle icon">
+                                            <span
+                                                class="p-2">Muscle</span>
+                                        </div>
+                                    </h5>
+                                    <p class="card-text">
+                                        BMI may misclassify muscular
+                                        individuals as overweight or
+                                        obese, as it doesn't
+                                        differentiate muscle from
+                                        fat.
+                                    </p>
+
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-10 col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6 pt-5"> <div
+                                class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <div class="d-flex">
+                                            <img
+                                                src="assets/ph_baby-light.svg"
+                                                alt="kid icon">
+                                            <span
+                                                class="p-2">Pregnancy</span>
+                                        </div>
+                                    </h5>
+                                    <p class="card-text">
+                                        Expectant mothers experience
+                                        weight gain due to their
+                                        growing baby. Maintaining a
+                                        healthy pre-pregnancy BMI is
+                                        advisable to minimise health
+                                        risks for both mother and
+                                        child.
+                                    </p>
+
+                                </div>
+                            </div></div>
+                        <div class="col-md-6 pt-5"> <div
+                                class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <div class="d-flex">
+                                            <img
+                                                src="assets/ph_person-light.svg"
+                                                alt="person icon">
+                                            <span
+                                                class="p-2">Race</span>
+                                        </div>
+                                    </h5>
+                                    <p class="card-text">
+                                        Certain health concerns may
+                                        affect individuals of some
+                                        Black and Asian origins at
+                                        lower BMIs than others. To
+                                        learn more, it is advised to
+                                        discuss this with your GP or
+                                        practice nurse.
+                                    </p>
+
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tablet view -->
+
+            <div id="tabletView" class="row justify-content-md-around">
+                <div class="col-12 col-sm-12  col-lg-6 p-3">
+                    <span class="title">Limitations of BMI</span>
+                    <p>Better understand your weight in relation to
+                        your
+                        height
+                        using our body mass index (BM) calculator.
+                        While
+                        BMI
+                        is
+                        not the sole determinant of a healthy
+                        weight, it
+                        offers
+                        a valuable starting point to evaluate your
+                        overall
+                        health and well-being.</p>
+                </div>
+
+                <div class="row justify-content-center g-3 gap-3">
+                    <div class="col-md-5"><div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <div class="d-flex">
+                                        <img
+                                            src="assets/ph_gender-intersex-light.svg"
+                                            alt="gender icon">
+                                        <span class="p-2">Gender</span>
+                                    </div>
+                                </h5>
+                                <p class="card-text">
+                                    The development and body fat
+                                    composition of girls and boys vary
+                                    with age. Consequently, a child's
+                                    age and gender are considered when
+                                    evaluating their BMI.
+                                </p>
+
+                            </div>
+                        </div></div>
+                    <div class="col-md-5">
+                        <div
+                            class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <div class="d-flex">
+                                        <img
+                                            src="assets/ph_cake-light.svg"
+                                            alt="age icon">
+                                        <span
+                                            class="p-2">Age</span>
+                                    </div>
+                                </h5>
+                                <p class="card-text">
+                                    In aging individuals,
+                                    increased body fat and
+                                    muscle loss may cause BMI to
+                                    underestimate body fat
+                                    content.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5"><div
+                            class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <div class="d-flex">
+                                        <img
+                                            src="assets/fluent-emoji-high-contrast_flexed-biceps.svg"
+                                            alt="muscle icon">
+                                        <span
+                                            class="p-2">Muscle</span>
+                                    </div>
+                                </h5>
+                                <p class="card-text">
+                                    BMI may misclassify muscular
+                                    individuals as overweight or
+                                    obese, as it doesn't
+                                    differentiate muscle from
+                                    fat.
+                                </p>
+
+                            </div>
+                        </div></div>
+                    <div class="col-md-5"><div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <div class="d-flex">
+                                        <img
+                                            src="assets/ph_baby-light.svg"
+                                            alt="kid icon">
+                                        <span class="p-2">Pregnancy</span>
+                                    </div>
+                                </h5>
+                                <p class="card-text">
+                                    Expectant mothers experience
+                                    weight gain due to their
+                                    growing baby. Maintaining a
+                                    healthy pre-pregnancy BMI is
+                                    advisable to minimise health
+                                    risks for both mother and
+                                    child.
+                                </p>
+
+                            </div>
+                        </div></div>
+                    <div class="col-md-5">
+                        <div
+                            class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <div class="d-flex">
+                                        <img
+                                            src="assets/ph_person-light.svg"
+                                            alt="person icon">
+                                        <span
+                                            class="p-2">Race</span>
+                                    </div>
+                                </h5>
+                                <p class="card-text">
+                                    Certain health concerns may
+                                    affect individuals of some
+                                    Black and Asian origins at
+                                    lower BMIs than others. To
+                                    learn more, it is advised to
+                                    discuss this with your GP or
+                                    practice nurse.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script rel="preload" src="app.js"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+
+    </body>
+</html>
