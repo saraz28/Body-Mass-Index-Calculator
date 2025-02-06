@@ -1,4 +1,4 @@
-# Aqwas Task - Body Mass Index Calculator solution
+# Body Mass Index Calculator solution
 
 ## Table of contents
 
