@@ -30,16 +30,6 @@ Users should be able to:
 
 - Live Site URL: [Body Mass Index Calculator](https://bodymassindexcalculatorapp.netlify.app/)
 
-## My process
-
-1. Set up by creating a project folder.
-1. Look through the designs and begin structuring the HTML using Bootstrap.
-1. Add styles of the project.
-1. Add the javascript logic.
-1. Test the project locally and responsive design.
-1. Create a repository and publish the project through GitHub.
-1. Hosting the application with Netlify.
-
 ### Built with
 
 - Semantic HTML5 markup
